@@ -31,6 +31,7 @@ function sumPositiveOnly(num1, num2) {
   for (i = longest; i >= 1; i--) {
     let sum =
       Number(firstNumber[i - 1]) + Number(secondNumber[i - 1]) + Number(carry);
+    carry = 0;
     if (sum > 9) {
       if (i > 1) {
         carry = sum.toString()[0];
@@ -40,7 +41,10 @@ function sumPositiveOnly(num1, num2) {
     result = sum + result;
   }
 
+  result = Number(result);
+
+  // return result;
   console.log(result);
 }
 
-sumPositiveOnly(99209, 803);
+sumPositiveOnly(492, 2460);
