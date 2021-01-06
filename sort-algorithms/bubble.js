@@ -10,7 +10,7 @@ function bubbleSort(ar) {
         }
         // console.log(ar);
     }
-    console.log(ar);
+    // console.log(ar);
 }
 
 bubbleSort([4, 3, 6, 7, 0]);
