@@ -20,4 +20,4 @@ def reverse(x):
         return 0
     return reversedInt
 
-reverse(2147483649)
+reverse(21474836495488888)
