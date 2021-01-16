@@ -11,4 +11,4 @@ function insertionSort(ar) {
     }
 }
 
-insertionSort([4, 3, 2, 1]);
+console.log(insertionSort([4, 3, 2, 1]));

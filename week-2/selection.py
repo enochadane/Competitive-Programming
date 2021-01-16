@@ -9,4 +9,4 @@ def selectionSort(lst):
     print(lst)
     return lst
 
-selectionSort([5, 4, 3, 7, 2, 1])
+selectionSort([2,0,2,1,1,0])
