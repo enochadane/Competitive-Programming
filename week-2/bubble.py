@@ -7,4 +7,4 @@ def bubbleSort(lst1):
 
     return lst1
 
-bubbleSort([4, 3, 5, 2, 1])
+bubbleSort([2,0,2,1,1,0])

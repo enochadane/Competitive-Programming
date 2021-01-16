@@ -8,4 +8,4 @@ def insertionSort(lst):
 
     return lst
 
-insertionSort([8, 7, 4, 3, 1, 9])
+insertionSort([2,0,2,1,1,0])
