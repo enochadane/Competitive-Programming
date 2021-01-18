@@ -5,10 +5,10 @@ class Node:
 
 class MyLinkedList(object):
     
-    size = 0
     def __init__(self):
         self.head = None
         self.tail = None
+        self.size = 0
 
     def get(self, index):
         if index < 0 or index >= self.size:
@@ -16,8 +16,10 @@ class MyLinkedList(object):
         if self.head is None:
             return -1
         currNode = self.head
-        for i in range(index):
+        i = 0
+        while i < index and currNode.next:
             currNode = currNode.next
+            i += 1
         return currNode.val
         
 
@@ -36,13 +38,18 @@ class MyLinkedList(object):
         if not self.head:
             self.tail = self.head = NewNode
         self.tail.next = NewNode
+        self.tail = NewNode
         self.size += 1
 
     def addAtIndex(self, index, val):
         NewNode = Node(val)
-        if index < 0 or index >= self.size:
+        if index < 0 or index > self.size:
             return
-        if self.head is None:
+        if index == 0:
+            self.addAtHead(val)
+            return
+        if index == self.size:
+            self.addAtTail(val)
             return
         currNode = self.head
         prev = self.head
@@ -51,12 +58,8 @@ class MyLinkedList(object):
             i += 1
             prev = currNode
             currNode = currNode.next
-        if index == self.size - 1:
-            currNode.next = NewNode
-            self.tail = NewNode
-        else:
-            prev.next = NewNode
-            NewNode.next = currNode
+        prev.next = NewNode
+        NewNode.next = currNode
         self.size += 1
         
 
@@ -81,8 +84,7 @@ class MyLinkedList(object):
             self.tail = prev
         self.size -= 1
             
-        
-
+  
 
 # Your MyLinkedList object will be instantiated and called as such:
 # obj = MyLinkedList()
@@ -108,10 +110,25 @@ class MyLinkedList(object):
 
 myLinkedList = MyLinkedList()
 print(myLinkedList.addAtHead(1))
+currNode = myLinkedList.head
+print(currNode.next)
+while currNode:
+    print("currNode", currNode.val)
+    currNode = currNode.next
 print(myLinkedList.addAtTail(3))
+currNode = myLinkedList.head
+print(currNode.next)
+while currNode:
+    print("currNode", currNode.val)
+    currNode = currNode.next
 print(myLinkedList.addAtIndex(1, 2))
+currNode = myLinkedList.head
+print(currNode.next)
+while currNode:
+    print("currNode", currNode.val)
+    currNode = currNode.next
 print(myLinkedList.get(1))
 print(myLinkedList.deleteAtIndex(1))
 print(myLinkedList.get(1))
 
-print(myLinkedList)
+print('*****************************************')
