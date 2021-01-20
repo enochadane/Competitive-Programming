@@ -47,4 +47,4 @@ function sumPositiveOnly(num1, num2) {
   console.log(result);
 }
 
-sumPositiveOnly(492, 2460);
+sumPositiveOnly(99, 99);
