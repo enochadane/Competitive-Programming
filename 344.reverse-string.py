@@ -10,8 +10,11 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        if s == '':
-            return ''
-        self.reverseString(s[1:] + [s[0]])
+        def helper(l, r, s):
+            if l >= r:
+                return
+            s[l], s[r] = s[r], s[l]
+            helper(l + 1, r - 1, s)
+        helper(0, len(s) - 1, s)
 # @lc code=end
 
